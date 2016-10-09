@@ -6,7 +6,7 @@
 
   <groupId>com.github.nikita-volkov.java</groupId>
   <artifactId>composites</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 
   <name>Composite types for Java</name>
   <description>A lightweight library of multi-arity anonymous product- and sum-types for Java</description>

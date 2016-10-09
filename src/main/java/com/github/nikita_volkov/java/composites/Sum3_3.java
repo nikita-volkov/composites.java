@@ -26,7 +26,7 @@ public final class Sum3_3<_1, _2, _3> implements Sum3<_1, _2, _3> {
 
   @Override
   public String toString() {
-    return "Sum3._3{value=" + value + '}';
+    return "Sum3_3{" + value + '}';
   }
 
 }

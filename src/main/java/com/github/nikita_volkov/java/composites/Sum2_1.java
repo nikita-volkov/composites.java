@@ -26,7 +26,7 @@ public final class Sum2_1<_1, _2> implements Sum2<_1, _2> {
 
   @Override
   public String toString() {
-    return "Sum2._1{value=" + value + '}';
+    return "Sum2_1{" + value + '}';
   }
 
 }
