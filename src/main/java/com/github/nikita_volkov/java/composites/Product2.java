@@ -30,10 +30,7 @@ public final class Product2<_1, _2> {
 
   @Override
   public String toString() {
-    return "Product2{" +
-      "_1=" + _1 +
-      ", _2=" + _2 +
-      '}';
+    return "Product2{" + _1 + ", " + _2 + '}';
   }
 
 }

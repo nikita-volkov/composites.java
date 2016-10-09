@@ -35,11 +35,7 @@ public final class Product3<_1, _2, _3> {
 
   @Override
   public String toString() {
-    return "Product3{" +
-      "_1=" + _1 +
-      ", _2=" + _2 +
-      ", _3=" + _3 +
-      '}';
+    return "Product3{" + _1 + ", " + _2 + ", " + _3 + "}";
   }
 
 }
