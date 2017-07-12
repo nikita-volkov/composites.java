@@ -1,21 +1,46 @@
 package com.github.nikita_volkov.java.composites;
 
-import java.util.Optional;
+public interface Sum3<case1, case2, case3> {
 
-public interface Sum3<_1, _2, _3> {
+  <output> output match(Matcher3<case1, case2, case3, output> matcher);
 
-  <output> output match(Sum3Cases<_1, _2, _3, output> cases);
+  final class Case1<case1, case2, case3> implements Sum3<case1, case2, case3> {
+    public final case1 value;
 
-  default Optional<_1> _1() {
-    return match(new Sum3Cases.Optional1<>());
+    public Case1(case1 value) {
+      this.value = value;
+    }
+
+    @Override
+    public <output> output match(Matcher3<case1, case2, case3, output> matcher) {
+      return matcher.match1(value);
+    }
   }
 
-  default Optional<_2> _2() {
-    return match(new Sum3Cases.Optional2<>());
+  final class Case2<case1, case2, case3> implements Sum3<case1, case2, case3> {
+    public final case2 value;
+
+    public Case2(case2 value) {
+      this.value = value;
+    }
+
+    @Override
+    public <output> output match(Matcher3<case1, case2, case3, output> matcher) {
+      return matcher.match2(value);
+    }
   }
 
-  default Optional<_3> _3() {
-    return match(new Sum3Cases.Optional3<>());
+  final class Case3<case1, case2, case3> implements Sum3<case1, case2, case3> {
+    public final case3 value;
+
+    public Case3(case3 value) {
+      this.value = value;
+    }
+
+    @Override
+    public <output> output match(Matcher3<case1, case2, case3, output> matcher) {
+      return matcher.match3(value);
+    }
   }
 
 }

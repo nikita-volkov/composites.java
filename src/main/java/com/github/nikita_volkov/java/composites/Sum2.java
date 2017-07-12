@@ -1,17 +1,36 @@
 package com.github.nikita_volkov.java.composites;
 
-import java.util.Optional;
+/**
+ * A sum class which is defined by how to pattern-match on it.
+ */
+public interface Sum2<case1, case2> {
 
-public interface Sum2<_1, _2> {
+  <output> output match(Matcher2<case1, case2, output> matcher);
 
-  <output> output match(Sum2Cases<_1, _2, output> cases);
+  final class Case1<case1, case2> implements Sum2<case1, case2> {
+    public final case1 value;
 
-  default Optional<_1> _1() {
-    return match(new Sum2Cases.Optional1<>());
+    public Case1(case1 value) {
+      this.value = value;
+    }
+
+    @Override
+    public <output> output match(Matcher2<case1, case2, output> matcher) {
+      return matcher.match1(value);
+    }
   }
 
-  default Optional<_2> _2() {
-    return match(new Sum2Cases.Optional2<>());
+  final class Case2<case1, case2> implements Sum2<case1, case2> {
+    public final case2 value;
+
+    public Case2(case2 value) {
+      this.value = value;
+    }
+
+    @Override
+    public <output> output match(Matcher2<case1, case2, output> matcher) {
+      return matcher.match2(value);
+    }
   }
 
 }
