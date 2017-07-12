@@ -7,6 +7,9 @@ public interface Sum2<case1, case2> {
 
   <output> output match(Matcher2<case1, case2, output> matcher);
 
+  /**
+   * The first case of the sum.
+   */
   final class Case1<case1, case2> implements Sum2<case1, case2> {
     public final case1 value;
 
@@ -20,6 +23,9 @@ public interface Sum2<case1, case2> {
     }
   }
 
+  /**
+   * The second case of the sum.
+   */
   final class Case2<case1, case2> implements Sum2<case1, case2> {
     public final case2 value;
 
